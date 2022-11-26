@@ -26,11 +26,13 @@ def tokenize(text):
     return clean_tokens
 
 # load data
-engine = create_engine('sqlite:///../data/YourDatabaseName.db')
-df = pd.read_sql_table('YourTableName', engine)
+engine = create_engine('sqlite:///../data/' + database_filepath)
+df = pd.read_sql('SELECT * FROM messages_with_categories', engine)
+categories = df.drop(columns = ['message', 'original', 'id', 'genre'])
 
+    
 # load model
-model = joblib.load("../models/your_model_name.pkl")
+model = joblib.load("../models/classifier.pickle")
 
 
 # index webpage displays cool visuals and receives user input text for model
@@ -39,18 +41,23 @@ model = joblib.load("../models/your_model_name.pkl")
 def index():
     
     # extract data needed for visuals
-    # TODO: Below is an example - modify to extract data for your own visuals
     genre_counts = df.groupby('genre').count()['message']
     genre_names = list(genre_counts.index)
     
+    categories_counts = categories.sum(axis = 0).values
+    categories_names = categories.columns
+
+    request_counts = df.groupby('request').count()['message']
+    request_names = ['no', 'yes']
+
     # create visuals
-    # TODO: Below is an example - modify to create your own visuals
     graphs = [
+        # first graph: the genre graph, with a bar layout
         {
             'data': [
                 Bar(
-                    x=genre_names,
-                    y=genre_counts
+                    x = genre_names,
+                    y = genre_counts
                 )
             ],
 
@@ -61,6 +68,44 @@ def index():
                 },
                 'xaxis': {
                     'title': "Genre"
+                }
+            }
+        },
+        # second graph: the distribution of request messages
+        {
+            'data': [
+                Bar(
+                    x = request_names,
+                    y = request_counts
+                )
+            ],
+
+            'layout': {
+                'title': 'Distribution of Request messages',
+                'yaxis': {
+                    'title': "Count"
+                },
+                'xaxis': {
+                    'title': "Request"
+                }
+            }
+        },
+        # third and last graph: the distribution of message categories
+        {
+            'data': [
+                Bar(
+                    x = categories_names,
+                    y = categories_counts
+                )
+            ],
+
+            'layout': {
+                'title': 'Distribution of Message Categories',
+                'yaxis': {
+                    'title': "Count"
+                },
+                'xaxis': {
+                    'title': "Category name"
                 }
             }
         }
@@ -87,13 +132,16 @@ def go():
     # This will render the go.html Please see that file. 
     return render_template(
         'go.html',
-        query=query,
-        classification_result=classification_results
+        query = query,
+        classification_result = classification_results
     )
 
 
 def main():
-    app.run(host='0.0.0.0', port=3000, debug=True)
+    app.run(
+        host = '0.0.0.0', 
+        port = 3001, 
+        debug = True)
 
 
 if __name__ == '__main__':
