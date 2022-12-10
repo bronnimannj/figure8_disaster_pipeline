@@ -1,0 +1,455 @@
+feature predicted: related
+-----------------------------------------------------
+              precision    recall  f1-score   support
+
+           0       0.70      0.36      0.48      1535
+           1       0.83      0.95      0.89      5010
+
+    accuracy                           0.81      6545
+   macro avg       0.77      0.66      0.68      6545
+weighted avg       0.80      0.81      0.79      6545
+
+
+
+feature predicted: request
+-----------------------------------------------------
+              precision    recall  f1-score   support
+
+           0       0.91      0.97      0.94      5418
+           1       0.82      0.56      0.67      1127
+
+    accuracy                           0.90      6545
+   macro avg       0.87      0.77      0.81      6545
+weighted avg       0.90      0.90      0.90      6545
+
+
+
+feature predicted: offer
+-----------------------------------------------------
+              precision    recall  f1-score   support
+
+           0       0.99      1.00      1.00      6512
+           1       0.00      0.00      0.00        33
+
+    accuracy                           0.99      6545
+   macro avg       0.50      0.50      0.50      6545
+weighted avg       0.99      0.99      0.99      6545
+
+
+
+feature predicted: aid_related
+-----------------------------------------------------
+              precision    recall  f1-score   support
+
+           0       0.78      0.89      0.83      3819
+           1       0.80      0.64      0.71      2726
+
+    accuracy                           0.79      6545
+   macro avg       0.79      0.76      0.77      6545
+weighted avg       0.79      0.79      0.78      6545
+
+
+
+feature predicted: medical_help
+-----------------------------------------------------
+              precision    recall  f1-score   support
+
+           0       0.94      0.99      0.96      6015
+           1       0.63      0.28      0.39       530
+
+    accuracy                           0.93      6545
+   macro avg       0.79      0.63      0.67      6545
+weighted avg       0.91      0.93      0.92      6545
+
+
+
+feature predicted: medical_products
+-----------------------------------------------------
+              precision    recall  f1-score   support
+
+           0       0.96      0.99      0.98      6197
+           1       0.72      0.32      0.45       348
+
+    accuracy                           0.96      6545
+   macro avg       0.84      0.66      0.71      6545
+weighted avg       0.95      0.96      0.95      6545
+
+
+
+feature predicted: search_and_rescue
+-----------------------------------------------------
+              precision    recall  f1-score   support
+
+           0       0.98      1.00      0.99      6346
+           1       0.62      0.20      0.30       199
+
+    accuracy                           0.97      6545
+   macro avg       0.80      0.60      0.64      6545
+weighted avg       0.96      0.97      0.97      6545
+
+
+
+feature predicted: security
+-----------------------------------------------------
+              precision    recall  f1-score   support
+
+           0       0.98      1.00      0.99      6420
+           1       0.45      0.08      0.14       125
+
+    accuracy                           0.98      6545
+   macro avg       0.72      0.54      0.56      6545
+weighted avg       0.97      0.98      0.97      6545
+
+
+
+feature predicted: military
+-----------------------------------------------------
+              precision    recall  f1-score   support
+
+           0       0.98      0.99      0.99      6335
+           1       0.62      0.31      0.41       210
+
+    accuracy                           0.97      6545
+   macro avg       0.80      0.65      0.70      6545
+weighted avg       0.97      0.97      0.97      6545
+
+
+
+feature predicted: water
+-----------------------------------------------------
+              precision    recall  f1-score   support
+
+           0       0.98      0.99      0.98      6103
+           1       0.83      0.65      0.73       442
+
+    accuracy                           0.97      6545
+   macro avg       0.90      0.82      0.86      6545
+weighted avg       0.97      0.97      0.97      6545
+
+
+
+feature predicted: food
+-----------------------------------------------------
+              precision    recall  f1-score   support
+
+           0       0.97      0.98      0.98      5806
+           1       0.81      0.80      0.80       739
+
+    accuracy                           0.96      6545
+   macro avg       0.89      0.89      0.89      6545
+weighted avg       0.96      0.96      0.96      6545
+
+
+
+feature predicted: shelter
+-----------------------------------------------------
+              precision    recall  f1-score   support
+
+           0       0.96      0.98      0.97      5953
+           1       0.78      0.60      0.68       592
+
+    accuracy                           0.95      6545
+   macro avg       0.87      0.79      0.83      6545
+weighted avg       0.95      0.95      0.95      6545
+
+
+
+feature predicted: clothing
+-----------------------------------------------------
+              precision    recall  f1-score   support
+
+           0       0.99      1.00      0.99      6434
+           1       0.69      0.41      0.52       111
+
+    accuracy                           0.99      6545
+   macro avg       0.84      0.71      0.76      6545
+weighted avg       0.98      0.99      0.99      6545
+
+
+
+feature predicted: money
+-----------------------------------------------------
+              precision    recall  f1-score   support
+
+           0       0.98      1.00      0.99      6394
+           1       0.55      0.23      0.32       151
+
+    accuracy                           0.98      6545
+   macro avg       0.77      0.61      0.65      6545
+weighted avg       0.97      0.98      0.97      6545
+
+
+
+feature predicted: missing_people
+-----------------------------------------------------
+              precision    recall  f1-score   support
+
+           0       0.99      1.00      0.99      6457
+           1       0.55      0.32      0.40        88
+
+    accuracy                           0.99      6545
+   macro avg       0.77      0.66      0.70      6545
+weighted avg       0.98      0.99      0.99      6545
+
+
+
+feature predicted: refugees
+-----------------------------------------------------
+              precision    recall  f1-score   support
+
+           0       0.98      0.99      0.99      6334
+           1       0.61      0.26      0.36       211
+
+    accuracy                           0.97      6545
+   macro avg       0.79      0.63      0.67      6545
+weighted avg       0.96      0.97      0.96      6545
+
+
+
+feature predicted: death
+-----------------------------------------------------
+              precision    recall  f1-score   support
+
+           0       0.97      0.99      0.98      6219
+           1       0.72      0.51      0.60       326
+
+    accuracy                           0.97      6545
+   macro avg       0.85      0.75      0.79      6545
+weighted avg       0.96      0.97      0.96      6545
+
+
+
+feature predicted: other_aid
+-----------------------------------------------------
+              precision    recall  f1-score   support
+
+           0       0.89      0.98      0.93      5693
+           1       0.62      0.16      0.26       852
+
+    accuracy                           0.88      6545
+   macro avg       0.75      0.57      0.59      6545
+weighted avg       0.85      0.88      0.85      6545
+
+
+
+feature predicted: infrastructure_related
+-----------------------------------------------------
+              precision    recall  f1-score   support
+
+           0       0.94      0.99      0.96      6096
+           1       0.42      0.08      0.14       449
+
+    accuracy                           0.93      6545
+   macro avg       0.68      0.54      0.55      6545
+weighted avg       0.90      0.93      0.91      6545
+
+
+
+feature predicted: transport
+-----------------------------------------------------
+              precision    recall  f1-score   support
+
+           0       0.96      0.99      0.98      6231
+           1       0.69      0.27      0.39       314
+
+    accuracy                           0.96      6545
+   macro avg       0.83      0.63      0.68      6545
+weighted avg       0.95      0.96      0.95      6545
+
+
+
+feature predicted: buildings
+-----------------------------------------------------
+              precision    recall  f1-score   support
+
+           0       0.97      0.99      0.98      6205
+           1       0.80      0.39      0.52       340
+
+    accuracy                           0.96      6545
+   macro avg       0.89      0.69      0.75      6545
+weighted avg       0.96      0.96      0.96      6545
+
+
+
+feature predicted: electricity
+-----------------------------------------------------
+              precision    recall  f1-score   support
+
+           0       0.98      1.00      0.99      6391
+           1       0.57      0.20      0.30       154
+
+    accuracy                           0.98      6545
+   macro avg       0.78      0.60      0.64      6545
+weighted avg       0.97      0.98      0.97      6545
+
+
+
+feature predicted: tools
+-----------------------------------------------------
+              precision    recall  f1-score   support
+
+           0       0.99      1.00      1.00      6506
+           1       0.30      0.08      0.12        39
+
+    accuracy                           0.99      6545
+   macro avg       0.65      0.54      0.56      6545
+weighted avg       0.99      0.99      0.99      6545
+
+
+
+feature predicted: hospitals
+-----------------------------------------------------
+              precision    recall  f1-score   support
+
+           0       0.99      1.00      0.99      6465
+           1       0.44      0.15      0.22        80
+
+    accuracy                           0.99      6545
+   macro avg       0.72      0.57      0.61      6545
+weighted avg       0.98      0.99      0.98      6545
+
+
+
+feature predicted: shops
+-----------------------------------------------------
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00      6514
+           1       0.00      0.00      0.00        31
+
+    accuracy                           0.99      6545
+   macro avg       0.50      0.50      0.50      6545
+weighted avg       0.99      0.99      0.99      6545
+
+
+
+feature predicted: aid_centers
+-----------------------------------------------------
+              precision    recall  f1-score   support
+
+           0       0.99      1.00      0.99      6453
+           1       0.26      0.07      0.10        92
+
+    accuracy                           0.98      6545
+   macro avg       0.62      0.53      0.55      6545
+weighted avg       0.98      0.98      0.98      6545
+
+
+
+feature predicted: other_infrastructure
+-----------------------------------------------------
+              precision    recall  f1-score   support
+
+           0       0.96      0.99      0.98      6251
+           1       0.31      0.05      0.09       294
+
+    accuracy                           0.95      6545
+   macro avg       0.63      0.52      0.53      6545
+weighted avg       0.93      0.95      0.94      6545
+
+
+
+feature predicted: weather_related
+-----------------------------------------------------
+              precision    recall  f1-score   support
+
+           0       0.90      0.95      0.92      4713
+           1       0.85      0.72      0.78      1832
+
+    accuracy                           0.89      6545
+   macro avg       0.87      0.84      0.85      6545
+weighted avg       0.88      0.89      0.88      6545
+
+
+
+feature predicted: floods
+-----------------------------------------------------
+              precision    recall  f1-score   support
+
+           0       0.96      0.99      0.98      5981
+           1       0.87      0.58      0.70       564
+
+    accuracy                           0.96      6545
+   macro avg       0.92      0.79      0.84      6545
+weighted avg       0.95      0.96      0.95      6545
+
+
+
+feature predicted: storm
+-----------------------------------------------------
+              precision    recall  f1-score   support
+
+           0       0.96      0.98      0.97      5927
+           1       0.75      0.66      0.70       618
+
+    accuracy                           0.95      6545
+   macro avg       0.86      0.82      0.84      6545
+weighted avg       0.94      0.95      0.95      6545
+
+
+
+feature predicted: fire
+-----------------------------------------------------
+              precision    recall  f1-score   support
+
+           0       0.99      1.00      0.99      6464
+           1       0.50      0.30      0.37        81
+
+    accuracy                           0.99      6545
+   macro avg       0.75      0.65      0.68      6545
+weighted avg       0.99      0.99      0.99      6545
+
+
+
+feature predicted: earthquake
+-----------------------------------------------------
+              precision    recall  f1-score   support
+
+           0       0.98      0.99      0.98      5925
+           1       0.87      0.80      0.83       620
+
+    accuracy                           0.97      6545
+   macro avg       0.93      0.89      0.91      6545
+weighted avg       0.97      0.97      0.97      6545
+
+
+
+feature predicted: cold
+-----------------------------------------------------
+              precision    recall  f1-score   support
+
+           0       0.99      0.99      0.99      6423
+           1       0.56      0.35      0.43       122
+
+    accuracy                           0.98      6545
+   macro avg       0.77      0.67      0.71      6545
+weighted avg       0.98      0.98      0.98      6545
+
+
+
+feature predicted: other_weather
+-----------------------------------------------------
+              precision    recall  f1-score   support
+
+           0       0.96      0.99      0.97      6198
+           1       0.46      0.18      0.26       347
+
+    accuracy                           0.95      6545
+   macro avg       0.71      0.59      0.62      6545
+weighted avg       0.93      0.95      0.93      6545
+
+
+
+feature predicted: direct_report
+-----------------------------------------------------
+              precision    recall  f1-score   support
+
+           0       0.89      0.97      0.93      5266
+           1       0.80      0.49      0.61      1279
+
+    accuracy                           0.88      6545
+   macro avg       0.84      0.73      0.77      6545
+weighted avg       0.87      0.88      0.87      6545
+
+
+

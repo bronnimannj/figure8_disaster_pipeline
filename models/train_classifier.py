@@ -4,6 +4,7 @@ import numpy as np
 import pandas as pd
 import re
 import matplotlib.pyplot as plt
+import pickle
 
 # Setting up connection
 from sqlalchemy import create_engine
@@ -20,10 +21,11 @@ from nltk.tokenize import word_tokenize
 from nltk.stem.porter import PorterStemmer
 
 # modelling sklearn
+from sklearn.base import BaseEstimator, TransformerMixin
 from sklearn.feature_extraction.text import CountVectorizer, TfidfTransformer
-from sklearn.pipeline import Pipeline
+from sklearn.pipeline import Pipeline, FeatureUnion
 from sklearn.multioutput import MultiOutputClassifier
-from sklearn.ensemble import RandomForestClassifier
+from sklearn.ensemble import GradientBoostingClassifier
 from sklearn.naive_bayes import MultinomialNB
 from sklearn.model_selection import train_test_split, GridSearchCV
 from sklearn.metrics import classification_report, confusion_matrix
@@ -50,11 +52,8 @@ def load_data(database_filepath):
     X = df['message']
 
     # drop columns from df that are not dependent variables
-    y = df.drop(columns=['id', 'message', 'original', 'genre'], axis=1)
+    y = df.drop(columns=['id', 'message', 'original', 'genre', 'child_alone'], axis=1)
     
-    # remove child_alone as it contains only 1 value
-    y.drop(columns=['child_alone'], axis=1, inplace=True)
-
     return X, y
 
 
@@ -129,7 +128,7 @@ def build_model():
         (
             'clf', 
             MultiOutputClassifier(
-                RandomForestClassifier(
+                GradientBoostingClassifier(
                     n_estimators = 500,
                     min_samples_leaf = 1)))
     ])
@@ -200,10 +199,16 @@ def evaluate_model(model, X_test, Y_test, category_names, name_experiment):
     )
     logger = logging.getLogger('log_pipeline')
 
-    for idx, column in enumerate(y_test.columns):
+    for idx, column in enumerate(Y_test.columns):
         logger.info('feature predicted: ' + column)
         logger.info('-'*53)
-        logger.info(classification_report(y_test[column], predictions[:,idx], zero_division = 0))
+        logger.info(
+            classification_report(
+                Y_test[column],
+                y_prediction[:,idx], 
+                zero_division = 0
+            )
+        )
         logger.info("\n")
     close_logger(logger)   
 
@@ -223,7 +228,13 @@ def save_model(model, model_filepath):
         None
     """
 
-    model.to_pickle(model_filepath)
+    pickle.dump(
+        model,
+        open(
+            model_filepath,
+            "wb"
+    )
+)
     return None
 
 

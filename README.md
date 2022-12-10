@@ -1,20 +1,38 @@
 # figure8_disaster_pipeline
-Project for DS course to create a pipeline analysing figure 8 data
-
 
 ## Table of contents
 
+- [Motivations](#motivations)
 - [Packages used](#packages_used)
 - [Instructions](#instructions)
-- [Motivations](#motivations)
 - [Files](#files)
+- [Possible improvements](#improvements)
 
 
-## Packages used
+## Motivations <a name="motivations"></a>
 
-...
+This project is part of the nanodegree [become a data scientist](https://eu.udacity.com/course/data-scientist-nanodegree--nd025) of [Udacity](https://eu.udacity.com/).
 
-## Instructions
+In this project, I am using a NLP pipeline with the NLTK package and a web app in Python.
+
+## Packages used <a name="packages_used"></a>
+
+- os
+- numpy
+- pandas
+- re
+- matplotlib
+- pickle
+- sqlalchemy
+- logging
+- nltk
+- sklearn
+- json
+- plotly
+- flask
+- pathlib
+
+## Instructions <a name="instructions"></a>
 1. Run the following commands in the project's root directory to set up your database and model.
 
     - To run ETL pipeline that cleans data and stores in database
@@ -30,15 +48,7 @@ Project for DS course to create a pipeline analysing figure 8 data
 
 
 
-## Motivations
-
-This project is part of the nanodegree [become a data scientist](https://eu.udacity.com/course/data-scientist-nanodegree--nd025) of [Udacity](https://eu.udacity.com/).
-
-In this project, I am using a NLP pipeline with the NLTK package and a web app in Python.
-
-
-
-## Files
+## Files <a name="files"></a>
 
 Here is the content of this repo:
 
@@ -58,11 +68,18 @@ Here is the content of this repo:
 
 - models
 |- train_classifier.py
-
+|- first_pipeline.pickle
+|- gridsearch_pipeline.pickle
+|- second_pipeline.pickle
+|- preferred_pipeline.pickle
 
 - notebooks
 |- etl_pipeline.ipynb # Notebook to prepare cleaning function
 |- ml_pipeline.ipynb # Notebook to test the ml algorithms
+|- logs
+| |- first_pipeline_log.txt
+| |- gridsearch_pipeline_log.txt
+| |- second_pipeline_log.txt
 
 - LICENSE
 - README.md
@@ -71,41 +88,13 @@ Here is the content of this repo:
 ```
 
 
-## Notes
-There are three components you'll need to complete for this project.
-### ETL Pipeline
-In a Python script, process_data.py, write a data cleaning pipeline that:
-
-- Loads the messages and categories datasets
-- Merges the two datasets
-- Cleans the data
-- Stores it in a SQLite database
-
-### ML Pipeline
-In a Python script, train_classifier.py, write a machine learning pipeline that:
-
-- Loads data from the SQLite database
-- Splits the dataset into training and test sets
-- Builds a text processing and machine learning pipeline
-- Trains and tunes a model using GridSearchCV
-- Outputs results on the test set
-- Exports the final model as a pickle file
-
-### Flask Web App
-We are providing much of the flask web app for you, but feel free to add extra features depending on your knowledge of flask, html, css and javascript. For this part, you'll need to:
-
-- Modify file paths for database and model as needed
-- Add data visualizations using Plotly in the web app. One example is provided for you
+## Possible improvements on this project: <a name="improvements"></a>
 
 
-
-
-
-### Suggestions to Make Your Project Stand Out!
-Go into more detail about the dataset and your data cleaning and modeling process in your README file, add screenshots of your web app and model results.
-Add more visualizations to the web app.
-Based on the categories that the ML algorithm classifies text into, advise some organizations to connect to.
-Customize the design of the web app.
-Deploy the web app to a cloud service provider.
-Improve the efficiency of the code in the ETL and ML pipeline.
-This dataset is imbalanced (ie some labels like water have few examples). In your README, discuss how this imbalance, how that affects training the model, and your thoughts about emphasizing precision or recall for the various categories.
+- Go into more detail about the dataset and your data cleaning and modeling process in your README file, add screenshots of your web app and model results.
+- Add more visualizations to the web app.
+- Based on the categories that the ML algorithm classifies text into, advise some organizations to connect to.
+- Customize the design of the web app.
+- Deploy the web app to a cloud service provider.
+- Improve the efficiency of the code in the ETL and ML pipeline.
+- This dataset is imbalanced (ie some labels like water have few examples). In your README, discuss how this imbalance, how that affects training the model, and your thoughts about emphasizing precision or recall for the various categories.
