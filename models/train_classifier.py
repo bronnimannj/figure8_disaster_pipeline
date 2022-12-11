@@ -1,4 +1,5 @@
 # standard libraries
+import sys
 import os
 import numpy as np
 import pandas as pd
@@ -44,9 +45,10 @@ def load_data(database_filepath):
     Returns:
         X: features
         y: targets
+        category_names: names of all categories
     """
 
-    engine = create_engine('sqlite:///../data/' + database_filepath)
+    engine = create_engine('sqlite:///' + database_filepath)
     df = pd.read_sql('SELECT * FROM messages_with_categories', engine)
 
     X = df['message']
@@ -54,7 +56,9 @@ def load_data(database_filepath):
     # drop columns from df that are not dependent variables
     y = df.drop(columns=['id', 'message', 'original', 'genre', 'child_alone'], axis=1)
     
-    return X, y
+    category_names = list(df.columns[4:])
+
+    return X, y, category_names
 
 
 def tokenize(text):
@@ -195,7 +199,7 @@ def evaluate_model(model, X_test, Y_test, category_names, name_experiment):
 
     setup_logger(
         'log_pipeline', 
-        f'logs/{name_experiment}_log.txt'
+        f'notebooks/logs/{name_experiment}_log.txt'
     )
     logger = logging.getLogger('log_pipeline')
 

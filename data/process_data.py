@@ -29,11 +29,11 @@ def load_data(messages_filepath, categories_filepath):
         inplace=True
     )
 
-    df = messages.merge(
-        categories, 
-        how = 'inner',
-        on = 'id'
-    )
+    df = pd.merge(
+        messages,
+        categories,
+        on='id',
+        how='inner')
 
     return df
 
@@ -52,7 +52,8 @@ def clean_data(df):
     categories = df['categories'].str.split(pat=';', expand=True)
     
     row = categories.head(1)
-    category_colnames = row.apply(lambda x: x[:-2])
+
+    category_colnames = row.apply(lambda x: x.str[:-2])
     
     categories.rename(columns=category_colnames.iloc[0], inplace=True)
 
@@ -70,7 +71,7 @@ def clean_data(df):
     return df
 
 
-def save_data(df, database_filepath):
+def save_data(df, database_filename):
     """
     This function stores df in a SQLite database in the specified database file path (database_filename)
     
@@ -82,14 +83,14 @@ def save_data(df, database_filepath):
     None
     """
 
-    engine = create_engine('sqlite:///../data/' + database_filename)
+    engine = create_engine('sqlite:///' + database_filename)
     df.to_sql('messages_with_categories', engine, index=False) 
 
 
 def main():
     if len(sys.argv) == 4:
 
-        messages_filepath, categories_filepath, database_filepath = sys.argv[1:]
+        messages_filepath, categories_filepath, database_filename = sys.argv[1:]
 
         print('Loading data...\n    MESSAGES: {}\n    CATEGORIES: {}'
               .format(messages_filepath, categories_filepath))
@@ -98,8 +99,8 @@ def main():
         print('Cleaning data...')
         df = clean_data(df)
         
-        print('Saving data...\n    DATABASE: {}'.format(database_filepath))
-        save_data(df, database_filepath)
+        print('Saving data...\n    DATABASE: {}'.format(database_filename))
+        save_data(df, database_filename)
         
         print('Cleaned data saved to database!')
     
