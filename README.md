@@ -9,15 +9,24 @@
 - [Possible improvements](#improvements)
 
 
-## Motivations <a name="motivations"></a>
+## Motivations and Summary <a name="motivations"></a>
 
 This project is part of the nanodegree [become a data scientist](https://eu.udacity.com/course/data-scientist-nanodegree--nd025) of [Udacity](https://eu.udacity.com/).
 
-In this project, I am using a NLP pipeline with the NLTK package and a web app in Python.
+Summary of the project:
+
+Following a disaster (flood etc), there are usually millions of communications related to this disaster. Either directly or by social media. This data, when collected, could be analysed to know at once which organisations need to be contacted to send help.
+
+In this project, I am using a NLP pipeline with the NLTK package to categorise the emergency messages based on the needs of the person sending the text. Then, I created a web app that takes as inpu any text message and categorizes it.
+
+The models were trained on real life disaster data provided by Figure Eight.
+
+
 
 ## Packages used <a name="packages_used"></a>
 
 - os
+- sys
 - numpy
 - pandas
 - re
