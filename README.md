@@ -3,10 +3,15 @@
 ## Table of contents
 
 - [Motivations](#motivations)
+- [Project description](#description)
+- [Visuals](#visuals)
 - [Packages used](#packages_used)
 - [Instructions](#instructions)
 - [Files](#files)
 - [Possible improvements](#improvements)
+- [Credits](#credits)
+- [License](#license)
+- [Status](#status)
 
 
 ## Motivations and Summary <a name="motivations"></a>
@@ -15,11 +20,17 @@ This project is part of the nanodegree [become a data scientist](https://eu.udac
 
 Summary of the project:
 
+## Project description <a name="description"></a>
+
 Following a disaster (flood etc), there are usually millions of communications related to this disaster. Either directly or by social media. This data, when collected, could be analysed to know at once which organisations need to be contacted to send help.
 
 In this project, I am using a NLP pipeline with the NLTK package to categorise the emergency messages based on the needs of the person sending the text. Then, I created a web app that takes as inpu any text message and categorizes it.
 
 The models were trained on real life disaster data provided by Figure Eight.
+
+
+## Visuals <a name="visuals"></a>
+
 
 
 
@@ -107,3 +118,37 @@ Here is the content of this repo:
 - Deploy the web app to a cloud service provider.
 - Improve the efficiency of the code in the ETL and ML pipeline.
 - This dataset is imbalanced (ie some labels like water have few examples). In your README, discuss how this imbalance, how that affects training the model, and your thoughts about emphasizing precision or recall for the various categories.
+
+
+## Credits <a name="credits"></a>
+
+This project is part of the Nanodegree [become a data scientist](https://eu.udacity.com/course/data-scientist-nanodegree--nd025) of [Udacity](https://eu.udacity.com/).
+
+
+## License <a name="license"></a>
+
+MIT License
+
+Copyright (c) [2022] [Julie Ballard]
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+## Project status  <a name="status"></a>
+
+This project was reviewed and accepted during my Nanodegree.

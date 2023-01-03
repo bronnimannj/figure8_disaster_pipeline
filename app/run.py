@@ -6,6 +6,7 @@ import os
 
 from nltk.stem import WordNetLemmatizer
 from nltk.tokenize import word_tokenize
+from sklearn.base import BaseEstimator, TransformerMixin
 
 from flask import Flask
 from flask import render_template, request, jsonify
@@ -14,9 +15,8 @@ from sqlalchemy import create_engine
 
 import pathlib
 
-# project_directory = os.path.dirname(os.getcwd())
-# project_directory = pathlib.PurePath(project_directory)
-# os.chdir(project_directory)
+project_directory = os.getcwd()
+project_directory = pathlib.PurePath(project_directory)
 
 app = Flask(__name__)
 
@@ -31,6 +31,19 @@ def tokenize(text):
 
     return clean_tokens
 
+class TextLengthExtractor(BaseEstimator, TransformerMixin):
+    """
+    Customized class to add the length of text as a feature.
+    This class is used in building model
+    """
+
+    def fit(self, x, y=None):
+        return self
+
+    def transform(self, X):
+        X_length = pd.Series(X).apply(lambda x: len(x))
+        return pd.DataFrame(X_length)
+
 # load data
 engine = create_engine('sqlite:///data/disaster_response.db')
 df = pd.read_sql('SELECT * FROM messages_with_categories', engine)
@@ -38,9 +51,8 @@ categories = df.drop(columns = ['message', 'original', 'id', 'genre','child_alon
 
     
 # load model
-with open("models/preferred_pipeline.pickle", "rb") as f:
+with open(project_directory / "models/preferred_pipeline.pickle", "rb") as f:
     model = pickle.load(f)
-
 
 # index webpage displays cool visuals and receives user input text for model
 @app.route('/')
