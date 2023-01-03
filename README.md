@@ -31,6 +31,12 @@ The models were trained on real life disaster data provided by Figure Eight.
 
 ## Visuals <a name="visuals"></a>
 
+Homepage when running the app:
+![image](https://user-images.githubusercontent.com/29840762/210413647-d09afa49-8f88-4744-b7d2-13bb84b4fc07.png)
+
+
+Example of model's output when testing the word "flood":
+![image](https://user-images.githubusercontent.com/29840762/210413724-1a016bea-16cc-4a9d-9408-fa1e4a108b40.png)
 
 
 
